@@ -7,9 +7,8 @@ import {
   Text,
   View,
   ScrollView,
-  ImageBackground,
 } from 'react-native';
-import {moderateScale} from 'react-native-size-matters';
+
 import {
   heightPercentageToDP,
   widthPercentageToDP,
@@ -18,8 +17,13 @@ import {Button} from 'react-native-elements/dist/buttons/Button';
 import FastImage from 'react-native-fast-image';
 import {RectangleLogin} from '../../Asset/Image';
 import {LogoBiller} from '../../Asset/Image';
+import {SignUp} from '../Screen';
 
 export default function Login(props) {
+  const gotoSignUp = () => {
+    props.navigation.navigate(SignUp);
+  };
+
   return (
     <SafeAreaView>
       <View style={styles.bgContainer}>
@@ -39,7 +43,9 @@ export default function Login(props) {
           </View>
           <View style={styles.textContainer}>
             <Text>Don't have an account? </Text>
-            <Text style={styles.signText}>Sign Up</Text>
+            <TouchableOpacity onPress={() => gotoSignUp()}>
+              <Text style={styles.signText}>Sign Up</Text>
+            </TouchableOpacity>
           </View>
           <View style={styles.LoginProperty}>
             <View>
