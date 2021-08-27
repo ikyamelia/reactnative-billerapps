@@ -18,10 +18,15 @@ import FastImage from 'react-native-fast-image';
 import {RectangleLogin} from '../../Asset/Image';
 import {LogoBiller} from '../../Asset/Image';
 import {SignUp} from '../Screen';
+import {Home} from '../Screen';
 
 export default function Login(props) {
   const gotoSignUp = () => {
     props.navigation.navigate(SignUp);
+  };
+
+  const gotoHome = () => {
+    props.navigation.navigate(Home);
   };
 
   return (
@@ -64,6 +69,7 @@ export default function Login(props) {
             </View>
           </View>
           <Button
+            onPress={() => gotoHome()}
             title="Login"
             titleStyle={styles.textStyle}
             buttonStyle={styles.button}
